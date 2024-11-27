@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    <script src="{% static 'script.js' %}"></script> 
+
+    <style>
+        /* Basic styling */
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+        }
+    
+        #search-container {
+          margin-bottom: 20px;
+          position: relative;
+        }
+    
+        #search-bar {
+          padding: 8px;
+          width: 300px;
+          font-size: 16px;
+        }
+    
+        #search-button {
+          padding: 8px 16px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+    
+        #error-message {
+          color: red;
+          margin-top: 10px;
+        }
+    
+        /* Styling for suggestion list */
+        .suggestions {
+          border: 1px solid #ccc;
+          max-height: 150px;
+          overflow-y: auto;
+          position: absolute;
+          top: 100%;
+          width: 100%;
+          background-color: white;
+          z-index: 100;
+          display: none;
+        }
+    
+        .suggestions div {
+          padding: 8px;
+          cursor: pointer;
+        }
+    
+        .suggestions div:hover {
+          background-color: #ddd;
+        }
+      </style>
+
+</head>

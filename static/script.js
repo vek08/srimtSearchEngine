@@ -1,0 +1,95 @@
+
+    // Tool data with value and URL pair
+    const toolData = [
+      {
+        value: "golang-github-zonedb-zonedb-dev",
+        url: "https://www.kali.org/tools/zonedb/#golang-github-zonedb-zonedb-dev"
+      },
+      {
+        value: "another-tool",
+        url: "main.html"
+      },
+      {
+        value: "some-other-tool",
+        url: "https://www.kali.org/tools/some-other-tool"
+      },
+      // Add more tools as needed
+    ];
+
+    // Select elements
+    const searchBar = document.getElementById('search-bar');
+    const searchButton = document.getElementById('search-button');
+    const errorMessage = document.getElementById('error-message');
+    const suggestionsList = document.getElementById('suggestions-list');
+
+    // Function to filter tools based on input
+    function showSuggestions(query) {
+      // Filter tools that match the input query
+      const suggestions = toolData.filter(tool => tool.value.toLowerCase().includes(query.toLowerCase()));
+
+      // Clear the suggestions list
+      suggestionsList.innerHTML = '';
+
+      if (suggestions.length > 0) {
+        // Display each suggestion in the list
+        suggestions.forEach(suggestion => {
+          const div = document.createElement('div');
+          div.textContent = suggestion.value;
+          div.addEventListener('click', function () {
+            searchBar.value = suggestion.value;
+            suggestionsList.style.display = 'none';
+            searchTool(); // Automatically trigger search
+          });
+          suggestionsList.appendChild(div);
+        });
+
+        suggestionsList.style.display = 'block';
+      } else {
+        suggestionsList.style.display = 'none';
+      }
+    }
+
+    // Function to search for the value and open the URL
+    function searchTool() {
+      const searchValue = searchBar.value.trim().toLowerCase();
+      const tool = toolData.find(tool => tool.value.toLowerCase() === searchValue);
+
+      if (tool) {
+        // If a matching tool is found, open the URL
+        window.open(tool.url, '_blank');
+        errorMessage.textContent = ''; // Clear any error messages
+        suggestionsList.style.display = 'none'; // Hide suggestions
+      } else {
+        // If no matching tool is found, display an error message
+        errorMessage.textContent = 'Tool not found. Please check your input.';
+        suggestionsList.style.display = 'none'; // Hide suggestions
+      }
+    }
+
+    // Add event listener for search button
+    searchButton.addEventListener('click', searchTool);
+
+    // Handle keyup event to show suggestions while typing
+    searchBar.addEventListener('keyup', function () {
+      const query = searchBar.value.trim();
+      if (query) {
+        showSuggestions(query); // Show suggestions based on query
+      } else {
+        suggestionsList.style.display = 'none'; // Hide suggestions when input is empty
+      }
+    });
+
+    // Optional: Allow pressing Enter key to trigger the search
+    searchBar.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        searchTool();
+      }
+    });
+
+    // Close suggestions if user clicks outside
+    document.addEventListener('click', function(event) {
+      if (!searchBar.contains(event.target) && !suggestionsList.contains(event.target)) {
+        suggestionsList.style.display = 'none';
+      }
+    });
+
