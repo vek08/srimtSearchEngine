@@ -12,6 +12,7 @@ img{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    justify-content: center;
     background-position: 69%;
     z-index: -1;
     filter: blur(11px);
@@ -19,6 +20,10 @@ img{
 
 /* ____desktop type mode---------------- */
 
+h1{
+  text-align: center;
+  /* padding-top: 520; */
+}
 #search-container{
     color: black;
     text-align: center;
@@ -27,22 +32,9 @@ img{
 
 }
 
-/* form{
-    padding-top: 30vh;
-    margin-right: 10%;
-}
-
-form label{
-    font-size: 69px;
-    letter-spacing: 20px;
-    word-spacing: 5px;
-    font-weight: bolder;
-
-} */
-
 #search-bar
 {
-    margin-top:20px;
+    margin-top:50vh;
     width: 35%;
     font-size: 18px;
     padding: 7px 100px 7px;
@@ -67,36 +59,6 @@ form label{
     cursor: pointer;
 
 }
-/* 
-::placeholder{
-    width: 100%;
-
-} */
-
-
-/* Basic styling */
-/* body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-} */
-
-/* #search-container {
-  margin-bottom: 20px;
-  position: relative;
-} */
-/* 
-#search-bar {
-  padding: 8px;
-  width: 300px;
-  font-size: 16px;
-} */
-
-/* #search-button {
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
-} */
-
 #error-message {
   color: red;
   margin-top: 10px;
@@ -104,12 +66,17 @@ form label{
 
 /* Styling for suggestion list */
 .suggestions {
-  border: 1px solid #ccc;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
   max-height: 150px;
   overflow-y: auto;
   position: absolute;
   top: 100%;
-  width: 100%;
+  width: 25%;
+  margin-left: 35%;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-color: white;
   z-index: 100;
   display: none;
