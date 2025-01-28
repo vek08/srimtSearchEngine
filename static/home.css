@@ -1,67 +1,78 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-img{
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    justify-content: center;
-    background-position: 69%;
-    z-index: -1;
-    filter: blur(11px);
+#bg-img {
+
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  justify-content: center;
+  background-position: 69%;
+  z-index: -1;
+  filter: blur(11px);
 }
 
 /* ____desktop type mode---------------- */
 
-h1{
+#search-container label {
+  margin-top: 69px;
+  margin-right: 50px;
+  position: absolute;
   text-align: center;
-  /* padding-top: 520; */
-}
-#search-container{
-    color: black;
-    text-align: center;
-    justify-content: center;
-    position: relative;
+  font-size: 69px;
+  letter-spacing: 15px;
+  word-spacing: 10px;
+  font-weight: bolder;
+  font-family: "Macondo", serif;
+
 
 }
 
-#search-bar
-{
-    margin-top:50vh;
-    width: 35%;
-    font-size: 18px;
-    padding: 7px 100px 7px;
-    border-color: black;
-    border: 0;
-    flex: 1;
-    outline: 0;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    
+.container {
+  width: 50%;
+  height: 50%;
+  color: black;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  margin-left: 450px;
+  margin-top: 200px;
 }
 
-#search-button{
-    padding: 7px 10px 7px;
-    border: 0;
-    flex: 1;
-    outline: 0;
-    font-size: 18px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    width: 5%;
-    cursor: pointer;
+#search-container {
+  color: black;
+  text-align: center;
+  justify-content: center;
 
 }
+
+
+#search-bar {
+  margin-top: 215px;
+
+}
+
+#search-button {
+  cursor: pointer;
+  margin-top: 215px;
+
+}
+
 #error-message {
   color: red;
-  margin-top: 10px;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  margin-bottom: 10px;
+  height: 20px;
+  width: 100%;
 }
 
 /* Styling for suggestion list */
@@ -71,15 +82,14 @@ h1{
   box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
   max-height: 150px;
   overflow-y: auto;
-  position: absolute;
-  top: 100%;
-  width: 25%;
-  margin-left: 35%;
-  border-top-left-radius: 10px;
+  position: sticky;
+  top: 0;
+  width: 100%;
   border-bottom-right-radius: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   z-index: 100;
   display: none;
+  color: black;
 }
 
 .suggestions div {
@@ -88,7 +98,7 @@ h1{
 }
 
 .suggestions div:hover {
-  background-color: #ddd;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* _____end desktop mode________-- */
