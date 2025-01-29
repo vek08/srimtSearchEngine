@@ -21,4 +21,6 @@ from srimtproject import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.homePage),
+    path('department/',views.department),
+    path('about-srimt/',views.aboutSrimt),
 ]

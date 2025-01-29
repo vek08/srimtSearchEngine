@@ -18,7 +18,10 @@ body img{
 .inside-container{
     display: flex;
     justify-content: center;
-    padding-top: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 #cont-card{
@@ -38,5 +41,39 @@ body h1{
     text-align: center;
     padding-top: 50px;
     font-family: "Macondo", serif;
+    font-weight: bolder;
+}
+
+
+.pop-up{
+    width: 50%;
+    height: 450px;
+    background-color:rgba(233, 255, 116, 0.9);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 30px 30px;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    text-transform: uppercase;
+}
+.pop-up a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Kanit", serif;
+    
+}
+
+/* call by js internally */
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+/* end  */
+
+
+.pop-up h2{
     font-weight: bolder;
 }
